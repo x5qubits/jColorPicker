@@ -1,4 +1,4 @@
-﻿namespace JHUICOLORPICKER
+﻿namespace jColorPicker
 {
     partial class Settings
     {
@@ -232,8 +232,10 @@
             this.jComboBox1.FormattingEnabled = true;
             this.jComboBox1.ItemHeight = 19;
             this.jComboBox1.Items.AddRange(new object[] {
-            "Light",
-            "Dark"});
+            "HTML Color Code",
+            "RGBA Css",
+            "RGB Array",
+            "RGBA Array"});
             this.jComboBox1.Location = new System.Drawing.Point(6, 28);
             this.jComboBox1.Name = "jComboBox1";
             this.jComboBox1.PromptText = "Select Template";

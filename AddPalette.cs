@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JHUICOLORPICKER
+namespace jColorPicker
 {
-    public partial class AddPalete : JForm
+    public partial class AddPalette : JForm
     {
         public static string ResultText = "";
-        public AddPalete()
+        public AddPalette()
         {
             InitializeComponent();
         }

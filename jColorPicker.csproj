@@ -7,9 +7,9 @@
     <ProjectGuid>{BC59EE70-7768-4E47-B793-6C841EB7175D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JHUICOLORPICKER</RootNamespace>
+    <RootNamespace>jColorPicker</RootNamespace>
     <AssemblyName>J Color Picker</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -54,17 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\PaletteCategory.cs" />
+    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="PreferenceManager.cs" />
     <Compile Include="RenamePalete.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RenamePalete.Designer.cs">
       <DependentUpon>RenamePalete.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddPalete.cs">
+    <Compile Include="AddPalette.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPalete.Designer.cs">
-      <DependentUpon>AddPalete.cs</DependentUpon>
+    <Compile Include="AddPalette.Designer.cs">
+      <DependentUpon>AddPalette.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -80,11 +83,12 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings1.cs" />
     <EmbeddedResource Include="RenamePalete.resx">
       <DependentUpon>RenamePalete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddPalete.resx">
-      <DependentUpon>AddPalete.cs</DependentUpon>
+    <EmbeddedResource Include="AddPalette.resx">
+      <DependentUpon>AddPalette.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

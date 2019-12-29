@@ -1,6 +1,6 @@
-﻿namespace JHUICOLORPICKER
+﻿namespace jColorPicker
 {
-    partial class RenamePalete
+    partial class RenamePalette
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenamePalete));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenamePalette));
             this.jPictureBox5 = new JHUI.Controls.JPictureBox();
             this.jTextBox1 = new JHUI.Controls.JTextBox();
             this.jButton1 = new JHUI.Controls.JButton();
@@ -101,7 +101,7 @@
             this.jButton1.UseSelectable = true;
             this.jButton1.Click += new System.EventHandler(this.jButton1_Click);
             // 
-            // RenamePalete
+            // RenamePalette
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,11 +114,11 @@
             this.JControlBoxShow = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "RenamePalete";
+            this.Name = "PalettePalete";
             this.PaddingTop = 0;
             this.PaintTopBorder = false;
             this.Resizable = false;
-            this.Text = "AddPalete";
+            this.Text = "AddPalette";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.jPictureBox5)).EndInit();
             this.ResumeLayout(false);

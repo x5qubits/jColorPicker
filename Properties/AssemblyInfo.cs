@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("J Color Picker")]
-[assembly: AssemblyDescription("A simple color picker made with JHUI. http://www.jhsoftware.xyz/")]
+[assembly: AssemblyDescription("A simple color picker made with JHUI. http://www.jhsoftware.pro/")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("JHS SA")]
+[assembly: AssemblyCompany("x5qubits@gmail.com")]
 [assembly: AssemblyProduct("J Color Picker")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("JHS SA")]
+[assembly: AssemblyTrademark("JHSOFTWARE")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]

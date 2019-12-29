@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.Reflection;
-using JHUICOLORPICKER;
+using jColorPicker;
 
 static class Program
 {
@@ -22,6 +22,8 @@ static class Program
         try
         {
             Form1 mainForm = new Form1();
+            PreferenceManager.Start();
+            DatabaseManager.Start();
             Application.Run(mainForm);
         }
         catch (Exception e)

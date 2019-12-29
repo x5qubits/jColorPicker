@@ -1,6 +1,6 @@
-﻿namespace JHUICOLORPICKER
+﻿namespace jColorPicker
 {
-    partial class AddPalete
+    partial class AddPalette
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPalete));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPalette));
             this.jPictureBox5 = new JHUI.Controls.JPictureBox();
             this.jTextBox1 = new JHUI.Controls.JTextBox();
             this.jButton1 = new JHUI.Controls.JButton();
@@ -82,7 +82,7 @@
             this.jTextBox1.Size = new System.Drawing.Size(254, 23);
             this.jTextBox1.Style = JHUI.JColorStyle.White;
             this.jTextBox1.TabIndex = 25;
-            this.jTextBox1.TextWaterMark = "Enter New Palete Name";
+            this.jTextBox1.TextWaterMark = "Enter New Palette Name";
             this.jTextBox1.Theme = JHUI.JThemeStyle.Dark;
             this.jTextBox1.UseSelectable = true;
             this.jTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -101,7 +101,7 @@
             this.jButton1.UseSelectable = true;
             this.jButton1.Click += new System.EventHandler(this.jButton1_Click);
             // 
-            // AddPalete
+            // AddPalette
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,11 +115,11 @@
             this.JControlBoxShow = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddPalete";
+            this.Name = "AddPalette";
             this.PaddingTop = 0;
             this.PaintTopBorder = false;
             this.Resizable = false;
-            this.Text = "AddPalete";
+            this.Text = "AddPalette";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.jPictureBox5)).EndInit();
             this.ResumeLayout(false);

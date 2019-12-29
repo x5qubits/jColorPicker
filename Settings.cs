@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JHUICOLORPICKER
+namespace jColorPicker
 {
     public partial class Settings : JForm
     {
@@ -45,7 +45,7 @@ namespace JHUICOLORPICKER
                             return;
                         }
                     }
-                    defaultkeyX = (Keys)e.KeyCode;
+                    defaultkeyX = e.KeyCode;
                     jGroupBox1.Text = "Record Color HotKey: " + defaultModX.ToString() + "+" + defaultkeyX.ToString();
 
                 }
@@ -60,13 +60,13 @@ namespace JHUICOLORPICKER
         {
             Keys defaultkey = Keys.C;
             JKeyModifiers defaultMod = JKeyModifiers.Alt;
-            if (Properties.Settings.Default.HotKey != 0)
+            if (PreferenceManager.Database.HotKey != 0)
             {
-                defaultkey = (Keys)Properties.Settings.Default.HotKey;
+                defaultkey = (Keys)PreferenceManager.Database.HotKey;
             }
-            if (Properties.Settings.Default.HotKeyModifier != 0)
+            if (PreferenceManager.Database.HotKeyModifier != 0)
             {
-                defaultMod = (JKeyModifiers)Properties.Settings.Default.HotKeyModifier;
+                defaultMod = (JKeyModifiers)PreferenceManager.Database.HotKeyModifier;
             }
             jGroupBox1.Text = "Record Color HotKey: "+ defaultMod.ToString() +"+"+ defaultkey.ToString();
             defaultkeyX = defaultkey;
@@ -79,20 +79,20 @@ namespace JHUICOLORPICKER
                 if(!str.Equals("Default") && !str.Equals("Custom"))
                     sThemeColor.Items.Add(str.Replace("_", " "));
             }
-            color = ((JColorStyle)Properties.Settings.Default.ThemeColor);
-            theme = ((JThemeStyle)Properties.Settings.Default.Theme);
+            color = PreferenceManager.Database.ThemeColor;
+            theme = PreferenceManager.Database.Theme;
             sThemeColor.SelectedItem = color.ToString();
             jTheme.SelectedItem = theme.ToString();
-            jColorSize.SelectedIndex = Properties.Settings.Default.ColorSize;
+            jColorSize.SelectedIndex = PreferenceManager.Database.ColorSize;
 
             locked = false;
         }
 
         private void Settings_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.HotKey = (int)defaultkeyX;
-            Properties.Settings.Default.HotKeyModifier = (int)defaultModX;
-            Properties.Settings.Default.Save();
+            PreferenceManager.Database.HotKey = (int)defaultkeyX;
+            PreferenceManager.Database.HotKeyModifier = (int)defaultModX;
+            PreferenceManager.Save();
             this.DialogResult = DialogResult.OK;
         }
 
@@ -100,9 +100,9 @@ namespace JHUICOLORPICKER
         {
             if(!locked && sThemeColor.SelectedIndex != -1)
             {
-                color = (JColorStyle)System.Enum.Parse(typeof(JColorStyle), sThemeColor.Items[sThemeColor.SelectedIndex].ToString());
-                Properties.Settings.Default.ThemeColor = (int)color;
-                Properties.Settings.Default.Save();
+                color = (JColorStyle)Enum.Parse(typeof(JColorStyle), sThemeColor.Items[sThemeColor.SelectedIndex].ToString());
+                PreferenceManager.Database.ThemeColor = color;
+                PreferenceManager.Save();
                 SetStyle(color, theme, 255);
             }
         }
@@ -111,9 +111,9 @@ namespace JHUICOLORPICKER
         {
             if (!locked && jTheme.SelectedIndex != -1)
             {
-                theme = (JThemeStyle)System.Enum.Parse(typeof(JThemeStyle), jTheme.Items[jTheme.SelectedIndex].ToString());
-                Properties.Settings.Default.Theme = (int)theme;
-                Properties.Settings.Default.Save();
+                theme = (JThemeStyle)Enum.Parse(typeof(JThemeStyle), jTheme.Items[jTheme.SelectedIndex].ToString());
+                PreferenceManager.Database.Theme = theme;
+                PreferenceManager.Save();
                 SetStyle(color, theme, 255);
             }
         }
@@ -134,8 +134,8 @@ namespace JHUICOLORPICKER
         {
             if (!locked && jColorSize.SelectedIndex != -1)
             {
-                Properties.Settings.Default.ColorSize = jColorSize.SelectedIndex;
-                Properties.Settings.Default.Save();
+                PreferenceManager.Database.ColorSize = jColorSize.SelectedIndex;
+                PreferenceManager.Save();
                 SetStyle(color, theme, 255);
             }
         }
