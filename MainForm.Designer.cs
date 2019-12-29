@@ -1,6 +1,6 @@
 ﻿namespace jColorPicker
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             JHUI.JAnimation jAnimation1 = new JHUI.JAnimation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.jScreenColorPicker1 = new JHUI.Controls.ColorPicker.JScreenColorPicker();
             this.CollorNow = new JHUI.Controls.JPictureBox();
             this.SettingsImage = new JHUI.Controls.JPictureBox();

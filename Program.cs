@@ -21,7 +21,7 @@ static class Program
 
         try
         {
-            Form1 mainForm = new Form1();
+            MainForm mainForm = new MainForm();
             PreferenceManager.Start();
             DatabaseManager.Start();
             Application.Run(mainForm);

@@ -16,7 +16,7 @@ using jColorPicker.Classes;
 
 namespace jColorPicker
 {
-    public partial class Form1 : JForm
+    public partial class MainForm : JForm
     {
         public class Anim
         {
@@ -49,7 +49,7 @@ namespace jColorPicker
         #endregion
 
         #region CONSTRUCTOR
-        public Form1()
+        public MainForm()
         {
             
             InitializeComponent();
