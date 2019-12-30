@@ -13,3 +13,4 @@ A simple yet functional color picker, that is a must for all web-developers.
 - Copying the colour code to the clipboard with one mouse click or automatically.
 - Optional stay-on-top behaviour.
 	
+![alt text](https://i.postimg.cc/X7M3vVYF/j-pick1.png)
