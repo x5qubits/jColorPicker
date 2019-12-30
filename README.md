@@ -1,4 +1,4 @@
-# Widelands ![Build Status Travis-CI](https://img.shields.io/appveyor/ci/x5Qubits/jColorPicker?style=flat-square)
+# J Color Picker ![Build Status Travis-CI](https://img.shields.io/appveyor/ci/x5Qubits/jColorPicker?style=flat-square)
 
 jColorPicker is app for Windows. It allows you to pick color from any webpage or from advanced color picker. It is great tool for web developers, game developers, webmasters and  digital artists
 
