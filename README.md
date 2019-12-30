@@ -17,7 +17,7 @@ J Color Picker a multi-purpose color picker for web designers and programmers. I
 - Optional stay-on-top behaviour.
 
 ## Resources
-* [Download Bins](https://github.com/x5qubits/jColorPicker/releases/download/1/Release.zip)
+* [Download Bins](https://github.com/x5qubits/jColorPicker/releases/tag/v2.0.0)
 * [Issue Tracker](https://github.com/x5qubits/jColorPicker/issues)
 
 ## Ui Map
