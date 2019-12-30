@@ -13,7 +13,7 @@ J Color Picker a multi-purpose color picker for web designers and programmers. I
 - High-DPI awareness.
 - Multi-display support.
 - No installation required. Just Color Picker is a portable application and can be run directly from a USB stick.
-- Copying the colour code to the clipboard with one mouse click or automatically.
+- Copying the color code to the clipboard with one mouse click or automatically.
 - Optional stay-on-top behaviour.
 
 ## Resources
