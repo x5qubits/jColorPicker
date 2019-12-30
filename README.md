@@ -4,10 +4,6 @@
 
 jColorPicker is app for Windows. It allows you to pick color from any webpage or from advanced color picker. It is great tool for web developers, game developers, webmasters and  digital artists
 
-## Download
-For the latest binary files please visit https://www.widelands.org/wiki/Download/
-
-
 ## Features
 - Frendly UI
 - Extensive range of colour code formats:HEX, RGB, RGBA, HSB/HSV, HSL, HWB, CMY, CMYK and CUSTOM.
@@ -19,8 +15,12 @@ For the latest binary files please visit https://www.widelands.org/wiki/Download
 - No installation required. Just Color Picker is a portable application and can be run directly from a USB stick.
 - Copying the colour code to the clipboard with one mouse click or automatically.
 - Optional stay-on-top behaviour.
-	
-### Simple guide
+
+## Resources
+* [Download Bins](http://stackoverflow.com/questions/tagged/payum)
+* [Issue Tracker](https://github.com/jColorPicker/jColorPicker/issues)
+
+## Guide
 ![alt text](https://i.postimg.cc/X7M3vVYF/j-pick1.png)
 
 
@@ -30,16 +30,5 @@ For the latest binary files please visit https://www.widelands.org/wiki/Download
 ![alt text](https://i.postimg.cc/J7NYbmQj/j-pick4.png)
 
 
-
-## Resources
-
-* [Site](https://payum.forma-pro.com/)
-* [Documentation](https://github.com/Payum/Payum/blob/master/docs/index.md)
-* [Questions](http://stackoverflow.com/questions/tagged/payum)
-* [Issue Tracker](https://github.com/Payum/Payum/issues)
-* [Twitter](https://twitter.com/payumphp)
-
-
 ## License
-
 Payum is released under the [MIT License](LICENSE).
