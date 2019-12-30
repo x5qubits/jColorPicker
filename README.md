@@ -1,5 +1,8 @@
-# jColorPicker
-A simple yet functional color picker, that is a must for all web-developers.
+# Widelands ![Build Status Travis-CI](https://img.shields.io/appveyor/ci/x5Qubits/jColorPicker?style=flat-square)
+
+jColorPicker is app for Windows. It allows you to pick color from any webpage or from advanced color picker. It is great tool for web developers, game developers, webmasters and  digital artists
+
+## License [![License](https://img.shields.io/github/license/widelands/widelands.svg?color=blue)](LICENCE)
 
 ## Features
 - Frendly UI
@@ -13,10 +16,13 @@ A simple yet functional color picker, that is a must for all web-developers.
 - Copying the colour code to the clipboard with one mouse click or automatically.
 - Optional stay-on-top behaviour.
 	
+### Simple guide
 ![alt text](https://i.postimg.cc/X7M3vVYF/j-pick1.png)
 
+
+### In App Guide
+![alt text](https://i.postimg.cc/0j0txdNV/j-pick3.png)
 ![alt text](https://i.postimg.cc/J0LT9dRy/j-pick2.png)
 
-![alt text](https://i.postimg.cc/0j0txdNV/j-pick3.png)
 
 ![alt text](https://i.postimg.cc/J7NYbmQj/j-pick4.png)
