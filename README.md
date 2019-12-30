@@ -18,7 +18,7 @@ jColorPicker is app for Windows. It allows you to pick color from any webpage or
 
 ## Resources
 * [Download Bins](http://stackoverflow.com/questions/tagged/payum)
-* [Issue Tracker](https://github.com/jColorPicker/jColorPicker/issues)
+* [Issue Tracker](https://github.com/x5qubits/jColorPicker/issues)
 
 ## Guide
 ![alt text](https://i.postimg.cc/X7M3vVYF/j-pick1.png)
