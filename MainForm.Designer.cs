@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            JHUI.JAnimation jAnimation2 = new JHUI.JAnimation();
+            JHUI.JAnimation jAnimation4 = new JHUI.JAnimation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.jScreenColorPicker1 = new JHUI.Controls.ColorPicker.JScreenColorPicker();
             this.ColorNow = new JHUI.Controls.JPictureBox();
@@ -56,6 +56,9 @@
             this.ColorValue = new JHUI.Controls.JTextBox();
             this.jLabel2 = new JHUI.Controls.JLabel();
             this.jAnimator1 = new JHUI.JAnimator(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ColorNow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SettingsImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddColorImage)).BeginInit();
@@ -157,17 +160,21 @@
             // 
             this.jAnimator1.SetDecoration(this.jContextMenu2, JHUI.DecorationType.None);
             this.jContextMenu2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.addToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.toolStripSeparator2,
+            this.deleteToolStripMenuItem});
             this.jContextMenu2.Name = "jContextMenu1";
-            this.jContextMenu2.Size = new System.Drawing.Size(151, 26);
+            this.jContextMenu2.Size = new System.Drawing.Size(181, 98);
             this.jContextMenu2.Style = JHUI.JColorStyle.White;
             this.jContextMenu2.Theme = JHUI.JThemeStyle.Dark;
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Image = global::jColorPicker.Properties.Resources.edit_64;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
-            this.toolStripMenuItem1.Text = "Change Name";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Rename";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.RenamePalette_BTN);
             // 
             // AddNewPalette
@@ -321,7 +328,7 @@
             this.jLabel1.Enabled = false;
             this.jLabel1.FontSize = JHUI.JLabelSize.Tall;
             this.jLabel1.ForeColor = System.Drawing.Color.White;
-            this.jLabel1.Location = new System.Drawing.Point(0, 26);
+            this.jLabel1.Location = new System.Drawing.Point(0, 24);
             this.jLabel1.Name = "jLabel1";
             this.jLabel1.Size = new System.Drawing.Size(650, 362);
             this.jLabel1.Style = JHUI.JColorStyle.White;
@@ -432,22 +439,43 @@
             // 
             this.jAnimator1.AnimationType = JHUI.AnimationType.Transparent;
             this.jAnimator1.Cursor = null;
-            jAnimation2.AnimateOnlyDifferences = true;
-            jAnimation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.BlindCoeff")));
-            jAnimation2.LeafCoeff = 0F;
-            jAnimation2.MaxTime = 1F;
-            jAnimation2.MinTime = 0F;
-            jAnimation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.MosaicCoeff")));
-            jAnimation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.MosaicShift")));
-            jAnimation2.MosaicSize = 0;
-            jAnimation2.Padding = new System.Windows.Forms.Padding(0);
-            jAnimation2.RotateCoeff = 0F;
-            jAnimation2.RotateLimit = 0F;
-            jAnimation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.ScaleCoeff")));
-            jAnimation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.SlideCoeff")));
-            jAnimation2.TimeCoeff = 0F;
-            jAnimation2.TransparencyCoeff = 1F;
-            this.jAnimator1.DefaultAnimation = jAnimation2;
+            jAnimation4.AnimateOnlyDifferences = true;
+            jAnimation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation4.BlindCoeff")));
+            jAnimation4.LeafCoeff = 0F;
+            jAnimation4.MaxTime = 1F;
+            jAnimation4.MinTime = 0F;
+            jAnimation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation4.MosaicCoeff")));
+            jAnimation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("jAnimation4.MosaicShift")));
+            jAnimation4.MosaicSize = 0;
+            jAnimation4.Padding = new System.Windows.Forms.Padding(0);
+            jAnimation4.RotateCoeff = 0F;
+            jAnimation4.RotateLimit = 0F;
+            jAnimation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation4.ScaleCoeff")));
+            jAnimation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation4.SlideCoeff")));
+            jAnimation4.TimeCoeff = 0F;
+            jAnimation4.TransparencyCoeff = 1F;
+            this.jAnimator1.DefaultAnimation = jAnimation4;
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::jColorPicker.Properties.Resources.Delete_64;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.DeletePalette_BTN);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Image = global::jColorPicker.Properties.Resources.Add_64;
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.AddNewPalette_BTN);
             // 
             // MainForm
             // 
@@ -527,6 +555,9 @@
         private JHUI.Controls.JTextBox ColorValue;
         private JHUI.Controls.JLabel jLabel2;
         private JHUI.Controls.JPictureBox sortImage;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 

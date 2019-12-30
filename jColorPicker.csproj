@@ -40,7 +40,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>jColorPickerLogo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\jColorPickerLogo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -200,10 +200,10 @@
     <None Include="Resources\JHUI_LOGOX.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="jColorPickerLogo.ico" />
+    <None Include="Resources\edit_64.png" />
+    <Content Include="Resources\jColorPickerLogo.ico" />
     <Content Include="Resources\jColorPickerLogo.png" />
     <Content Include="Resources\pencil-edit-button2.png" />
-    <None Include="Resources\sort_64.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

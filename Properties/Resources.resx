@@ -121,6 +121,9 @@
   <data name="Delete_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sort_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="jColorPickerLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\jcolorpickerlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,7 @@
   <data name="JHUI_LOGOX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JHUI_LOGOX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sort_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sort_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

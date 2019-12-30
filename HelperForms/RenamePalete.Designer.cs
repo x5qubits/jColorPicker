@@ -114,6 +114,7 @@
             this.Controls.Add(this.jTextBox1);
             this.Controls.Add(this.jPictureBox5);
             this.DisplayHeader = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.JControlBoxShow = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
