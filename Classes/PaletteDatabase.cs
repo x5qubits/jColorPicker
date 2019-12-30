@@ -7,7 +7,7 @@ namespace jColorPicker.Classes
 {
     public class PaletteDatabase : DataFile
     {
-        public int index;
+        public int index = -1;
         public Dictionary<int, PaletteCategory> paletts = new Dictionary<int, PaletteCategory>();
 
         public override void Serialize(DataWriter writer)

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            JHUI.JAnimation jAnimation1 = new JHUI.JAnimation();
+            JHUI.JAnimation jAnimation2 = new JHUI.JAnimation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.jScreenColorPicker1 = new JHUI.Controls.ColorPicker.JScreenColorPicker();
             this.ColorNow = new JHUI.Controls.JPictureBox();
@@ -48,6 +48,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.jColorPalette1 = new JHUI.Controls.JColorPalette();
             this.jToolTip1 = new JHUI.Components.JToolTip();
+            this.sortImage = new JHUI.Controls.JPictureBox();
             this.PictureBox_JHUILogo = new JHUI.Controls.JPictureBox();
             this.jLabel1 = new JHUI.Controls.JLabel();
             this.jColorEditor1 = new JHUI.Controls.ColorPicker.JColorEditor();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddNewPalette)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeletePalette)).BeginInit();
             this.jContextMenu3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sortImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_JHUILogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_MyLogo)).BeginInit();
             this.SuspendLayout();
@@ -103,14 +105,14 @@
             this.SettingsImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jAnimator1.SetDecoration(this.SettingsImage, JHUI.DecorationType.None);
-            this.SettingsImage.Location = new System.Drawing.Point(624, 26);
+            this.SettingsImage.Location = new System.Drawing.Point(622, 26);
             this.SettingsImage.Name = "SettingsImage";
             this.SettingsImage.Size = new System.Drawing.Size(25, 25);
             this.SettingsImage.Style = JHUI.JColorStyle.White;
             this.SettingsImage.TabIndex = 13;
             this.SettingsImage.TabStop = false;
             this.SettingsImage.Theme = JHUI.JThemeStyle.Dark;
-            this.jToolTip1.SetToolTip(this.SettingsImage, "Open Settings");
+            this.jToolTip1.SetToolTip(this.SettingsImage, "Open settings");
             this.SettingsImage.UseCustomBackColor = true;
             this.SettingsImage.Click += new System.EventHandler(this.OpenSettings_BTN);
             // 
@@ -129,7 +131,7 @@
             this.AddColorImage.TabIndex = 17;
             this.AddColorImage.TabStop = false;
             this.AddColorImage.Theme = JHUI.JThemeStyle.Dark;
-            this.jToolTip1.SetToolTip(this.AddColorImage, "Save Color");
+            this.jToolTip1.SetToolTip(this.AddColorImage, "Save color to palette.");
             this.AddColorImage.Click += new System.EventHandler(this.SaveColor_BTN);
             // 
             // PaletteSelector
@@ -137,10 +139,11 @@
             this.PaletteSelector.ContextMenuStrip = this.jContextMenu2;
             this.PaletteSelector.CutstomBorderColor = System.Drawing.Color.Transparent;
             this.jAnimator1.SetDecoration(this.PaletteSelector, JHUI.DecorationType.None);
+            this.PaletteSelector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PaletteSelector.FontSize = JHUI.JComboBoxSize.Small;
             this.PaletteSelector.FormattingEnabled = true;
             this.PaletteSelector.ItemHeight = 19;
-            this.PaletteSelector.Location = new System.Drawing.Point(68, 28);
+            this.PaletteSelector.Location = new System.Drawing.Point(69, 24);
             this.PaletteSelector.Name = "PaletteSelector";
             this.PaletteSelector.Size = new System.Drawing.Size(107, 25);
             this.PaletteSelector.Style = JHUI.JColorStyle.White;
@@ -174,14 +177,14 @@
             this.AddNewPalette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddNewPalette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jAnimator1.SetDecoration(this.AddNewPalette, JHUI.DecorationType.None);
-            this.AddNewPalette.Location = new System.Drawing.Point(10, 28);
+            this.AddNewPalette.Location = new System.Drawing.Point(11, 24);
             this.AddNewPalette.Name = "AddNewPalette";
             this.AddNewPalette.Size = new System.Drawing.Size(25, 25);
             this.AddNewPalette.Style = JHUI.JColorStyle.White;
             this.AddNewPalette.TabIndex = 21;
             this.AddNewPalette.TabStop = false;
             this.AddNewPalette.Theme = JHUI.JThemeStyle.Dark;
-            this.jToolTip1.SetToolTip(this.AddNewPalette, "Add New Color Palete");
+            this.jToolTip1.SetToolTip(this.AddNewPalette, "Add a new color palette.");
             this.AddNewPalette.Click += new System.EventHandler(this.AddNewPalette_BTN);
             // 
             // DeletePalette
@@ -191,14 +194,14 @@
             this.DeletePalette.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeletePalette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jAnimator1.SetDecoration(this.DeletePalette, JHUI.DecorationType.None);
-            this.DeletePalette.Location = new System.Drawing.Point(38, 28);
+            this.DeletePalette.Location = new System.Drawing.Point(39, 24);
             this.DeletePalette.Name = "DeletePalette";
             this.DeletePalette.Size = new System.Drawing.Size(25, 25);
             this.DeletePalette.Style = JHUI.JColorStyle.White;
             this.DeletePalette.TabIndex = 23;
             this.DeletePalette.TabStop = false;
             this.DeletePalette.Theme = JHUI.JThemeStyle.Dark;
-            this.jToolTip1.SetToolTip(this.DeletePalette, "Delete Selected Color Palete");
+            this.jToolTip1.SetToolTip(this.DeletePalette, "Delete selected color palette");
             this.DeletePalette.Click += new System.EventHandler(this.DeletePalette_BTN);
             // 
             // notifyIcon1
@@ -275,6 +278,24 @@
             this.jToolTip1.Style = JHUI.JColorStyle.White;
             this.jToolTip1.StyleManager = null;
             this.jToolTip1.Theme = JHUI.JThemeStyle.Dark;
+            // 
+            // sortImage
+            // 
+            this.sortImage.BackColor = System.Drawing.Color.Transparent;
+            this.sortImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sortImage.BackgroundImage")));
+            this.sortImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sortImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.jAnimator1.SetDecoration(this.sortImage, JHUI.DecorationType.None);
+            this.sortImage.Location = new System.Drawing.Point(182, 24);
+            this.sortImage.Name = "sortImage";
+            this.sortImage.Size = new System.Drawing.Size(25, 25);
+            this.sortImage.Style = JHUI.JColorStyle.White;
+            this.sortImage.TabIndex = 50;
+            this.sortImage.TabStop = false;
+            this.sortImage.Theme = JHUI.JThemeStyle.Dark;
+            this.jToolTip1.SetToolTip(this.sortImage, "Sort palette view.");
+            this.sortImage.UseCustomBackColor = true;
+            this.sortImage.Click += new System.EventHandler(this.ChangeSotring_BTN);
             // 
             // PictureBox_JHUILogo
             // 
@@ -411,28 +432,29 @@
             // 
             this.jAnimator1.AnimationType = JHUI.AnimationType.Transparent;
             this.jAnimator1.Cursor = null;
-            jAnimation1.AnimateOnlyDifferences = true;
-            jAnimation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.BlindCoeff")));
-            jAnimation1.LeafCoeff = 0F;
-            jAnimation1.MaxTime = 1F;
-            jAnimation1.MinTime = 0F;
-            jAnimation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.MosaicCoeff")));
-            jAnimation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.MosaicShift")));
-            jAnimation1.MosaicSize = 0;
-            jAnimation1.Padding = new System.Windows.Forms.Padding(0);
-            jAnimation1.RotateCoeff = 0F;
-            jAnimation1.RotateLimit = 0F;
-            jAnimation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.ScaleCoeff")));
-            jAnimation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation1.SlideCoeff")));
-            jAnimation1.TimeCoeff = 0F;
-            jAnimation1.TransparencyCoeff = 1F;
-            this.jAnimator1.DefaultAnimation = jAnimation1;
+            jAnimation2.AnimateOnlyDifferences = true;
+            jAnimation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.BlindCoeff")));
+            jAnimation2.LeafCoeff = 0F;
+            jAnimation2.MaxTime = 1F;
+            jAnimation2.MinTime = 0F;
+            jAnimation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.MosaicCoeff")));
+            jAnimation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.MosaicShift")));
+            jAnimation2.MosaicSize = 0;
+            jAnimation2.Padding = new System.Windows.Forms.Padding(0);
+            jAnimation2.RotateCoeff = 0F;
+            jAnimation2.RotateLimit = 0F;
+            jAnimation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.ScaleCoeff")));
+            jAnimation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("jAnimation2.SlideCoeff")));
+            jAnimation2.TimeCoeff = 0F;
+            jAnimation2.TransparencyCoeff = 1F;
+            this.jAnimator1.DefaultAnimation = jAnimation2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 395);
+            this.Controls.Add(this.sortImage);
             this.Controls.Add(this.ColorValue);
             this.Controls.Add(this.jLabel2);
             this.Controls.Add(this.PictureBox_MyLogo);
@@ -454,8 +476,8 @@
             this.JOrderControlBoxButton1 = JHUI.Forms.JForm.JHUIControlBoxButtons.Close;
             this.JOrderControlBoxButton3 = JHUI.Forms.JForm.JHUIControlBoxButtons.Minimize;
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(651, 395);
             this.Name = "MainForm";
-            this.PaddingTop = 4;
             this.ShadowType = JHUI.Forms.JFormShadowType.Flat;
             this.Text = "J Color Picker";
             this.TextAlign = JHUI.Forms.JFormTextAlign.Center;
@@ -471,6 +493,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddNewPalette)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeletePalette)).EndInit();
             this.jContextMenu3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sortImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_JHUILogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_MyLogo)).EndInit();
             this.ResumeLayout(false);
@@ -503,6 +526,7 @@
         private JHUI.Controls.JPictureBox PictureBox_MyLogo;
         private JHUI.Controls.JTextBox ColorValue;
         private JHUI.Controls.JLabel jLabel2;
+        private JHUI.Controls.JPictureBox sortImage;
     }
 }
 

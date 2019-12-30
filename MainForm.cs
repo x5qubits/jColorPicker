@@ -54,7 +54,7 @@ namespace jColorPicker
             if (PreferenceManager.Database.FirstTime || ShowGuide)
             {
                 jLabel1.Text = "HI!";
-                jLabel2.Visible = ColorValue.Visible = PictureBox_MyLogo.Visible = PictureBox_JHUILogo.Visible = jColorEditor1.Visible = DeletePalette.Visible = AddNewPalette.Visible = SettingsImage.Visible = AddColorImage.Visible = jColorPalette1.Visible = ColorNow.Visible = PaletteSelector.Visible = jScreenColorPicker1.Visible = false;
+                sortImage.Visible = jLabel2.Visible = ColorValue.Visible = PictureBox_MyLogo.Visible = PictureBox_JHUILogo.Visible = jColorEditor1.Visible = DeletePalette.Visible = AddNewPalette.Visible = SettingsImage.Visible = AddColorImage.Visible = jColorPalette1.Visible = ColorNow.Visible = PaletteSelector.Visible = jScreenColorPicker1.Visible = false;
                 this.Text = "";
                 messages = new Anim[]
                 {
@@ -71,7 +71,7 @@ namespace jColorPicker
                     new Anim( 6, "The color is auto-saved to your clipboard,", null, null),
                     new Anim( 4, "so you can press CTRL + V to paste.", null, null),
                     new Anim( 6, "Put your mouse over the other controls for help", null, null),
-                    new Anim( 3f, "Happy Designing!",  new Control[] { DeletePalette, AddNewPalette , SettingsImage, AddColorImage, jColorPalette1,PaletteSelector }, PictureBox_JHUILogo, true),
+                    new Anim( 3f, "Happy Designing!",  new Control[] { sortImage, DeletePalette, AddNewPalette , SettingsImage, AddColorImage, jColorPalette1,PaletteSelector }, PictureBox_JHUILogo, true),
                     new Anim( 0, "",  null, jLabel1, false, true),
                 };
                 ColorValue.BringToFront();
@@ -309,7 +309,7 @@ namespace jColorPicker
                         DbName = AddPalette.ResultText,
                         data = new PaletteItem[0]
                     };
-                    DatabaseManager.AddPalette(n);
+                    DatabaseManager.AddPalette(n, true);
                     AddPalette.ResultText = "";
                     PaletteSelector.Items.Add(n.DbName);
 
@@ -373,6 +373,45 @@ namespace jColorPicker
                     }
                 }
             }
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == (Keys.Control | Keys.V))
+            {
+                int index = PaletteSelector.SelectedIndex;
+                if (index > -1)
+                {
+                    var text = Clipboard.GetText();
+                    if (Regex.Match(text, "^#(?:[0-9a-fA-F]{3}){1,2}$").Success && index > -1)
+                    {
+                        ColorValue.Text = text;
+                        var c = ColorTranslator.FromHtml(text);
+                        jScreenColorPicker1.Color = c;
+                        jColorEditor1.Color = c;
+                        ColorNow.BackColor = c;
+                        AddColorImage.BackColor = c;
+                    }
+                }
+            }
+        }
+
+        private void ChangeSotring_BTN(object sender, EventArgs e)
+        {
+            if(PreferenceManager.Database.ColorSize == 0)
+            {
+                PreferenceManager.Database.ColorSize = 1;
+            }
+            else if (PreferenceManager.Database.ColorSize == 1)
+            {
+                PreferenceManager.Database.ColorSize = 2;
+            }
+            else
+            {
+                PreferenceManager.Database.ColorSize = 0;
+            }
+            PreferenceManager.Save();
+            jColorPalette1.SetColorItemSize(PreferenceManager.Database.ColorSize);
         }
 
         private void ShowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -549,26 +588,5 @@ namespace jColorPicker
         }
 
         #endregion
-
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == (Keys.Control | Keys.V))
-            {
-                int index = PaletteSelector.SelectedIndex;
-                if (index > -1)
-                {
-                    var text = Clipboard.GetText();
-                    if (Regex.Match(text, "^#(?:[0-9a-fA-F]{3}){1,2}$").Success && index > -1)
-                    {
-                        ColorValue.Text = text;
-                        var c = ColorTranslator.FromHtml(text);
-                        jScreenColorPicker1.Color = c;
-                        jColorEditor1.Color = c;
-                        ColorNow.BackColor = c;
-                        AddColorImage.BackColor = c;
-                    }
-                }
-            }
-        }
     }
 }
