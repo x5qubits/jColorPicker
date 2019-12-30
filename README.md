@@ -20,6 +20,15 @@ J Color Picker a multi-purpose color picker for web designers and programmers. I
 * [Download Bins](https://github.com/x5qubits/jColorPicker/releases/download/1/Release.zip)
 * [Issue Tracker](https://github.com/x5qubits/jColorPicker/issues)
 
+## Ui Map
+![alt text](https://i.postimg.cc/X7M3vVYF/j-pick1.png)
+
+
+## In App Guide
+![alt text](https://i.postimg.cc/0j0txdNV/j-pick3.png)
+![alt text](https://i.postimg.cc/J0LT9dRy/j-pick2.png)
+![alt text](https://i.postimg.cc/J7NYbmQj/j-pick4.png)
+
 ## Custom Color Code
 Replace Map:
 ~~~~
@@ -39,16 +48,6 @@ rgb(@R, @G, @B); will output rgb(255, 0, 0);
 rgba(@R, @G, @B, @A); will output rgba(255, 0, 0, 1);
 hsla(@R, @G, @B, @DA); will output hsla(255, 0, 0, 1.0);
 ~~~~
-
-## Ui Map
-![alt text](https://i.postimg.cc/X7M3vVYF/j-pick1.png)
-
-
-## In App Guide
-![alt text](https://i.postimg.cc/0j0txdNV/j-pick3.png)
-![alt text](https://i.postimg.cc/J0LT9dRy/j-pick2.png)
-![alt text](https://i.postimg.cc/J7NYbmQj/j-pick4.png)
-
 
 ## License
 Payum is released under the [MIT License](LICENSE).
