@@ -1,47 +1,10 @@
 ﻿using jColorPicker.Classes;
 using JCommon.FileDatabase;
-using JCommon.FileDatabase.IO;
-using JHUI;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace jColorPicker
 {
-    public class PreferenceSave : DataFile
-    {
-        public int HotKeyModifier = 0;
-        public int HotKey = 0;
-        public int ColorSize = 2;
-        public JColorStyle ThemeColor = JColorStyle.White;
-        public JThemeStyle Theme = JThemeStyle.Dark;
-        public bool FirstTime = false;
-
-        public override void Serialize(DataWriter writer)
-        {
-            writer.Write(HotKeyModifier);
-            writer.Write(HotKey);
-            writer.Write(ColorSize);
-            writer.Write((int)ThemeColor);
-            writer.Write((int)Theme);
-            writer.Write(FirstTime);
-        }
-        public override void Deserialize(DataReader reader)
-        {
-            HotKeyModifier = reader.ReadInt32();
-            HotKey = reader.ReadInt32();
-            ColorSize = reader.ReadInt32();
-            ThemeColor = (JColorStyle)reader.ReadInt32();
-            Theme = (JThemeStyle)reader.ReadInt32();
-            FirstTime = reader.ReadBoolean();
-        }
-
-    }
-
     public class PreferenceManager
     {
         #region SINGLETON

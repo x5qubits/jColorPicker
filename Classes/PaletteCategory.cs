@@ -5,7 +5,7 @@ namespace jColorPicker.Classes
 {
     public class PaletteCategory
     {
-        public PaleteItem[] data = null;
+        public PaletteItem[] data = null;
         public string DbName = null;
     }
 }

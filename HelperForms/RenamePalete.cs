@@ -18,7 +18,11 @@ namespace jColorPicker
         {
             InitializeComponent();
         }
-
+        public RenamePalette(string value)
+        {
+            InitializeComponent();
+            this.jTextBox1.Text = value;
+        }
         private void jButton1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;

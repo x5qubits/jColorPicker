@@ -9,15 +9,30 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>jColorPicker</RootNamespace>
     <AssemblyName>J Color Picker</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>pdbonly</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -34,14 +49,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+    <ApplicationIcon>jColorPickerLogo.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="JCommon">
-      <HintPath>libs\JCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="JHUI, Version=5.1.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="JHUI">
       <HintPath>libs\JHUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -55,6 +67,70 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\PaletteCategory.cs" />
+    <Compile Include="Classes\PaletteDatabase.cs" />
+    <Compile Include="Classes\PreferenceSave.cs" />
+    <Compile Include="JCommon\CDManager.cs" />
+    <Compile Include="JCommon\CircularList.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedArray.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedBinarySearch.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedConvertor.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedDotNetCompatibility.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedDSAEncryption.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedEnumerable.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedFloat.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedFormating.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedNumber.cs" />
+    <Compile Include="JCommon\Extensions\ExtendedString.cs" />
+    <Compile Include="JCommon\FileDatabase\Containers\FileItems.cs" />
+    <Compile Include="JCommon\FileDatabase\Containers\FileListColection.cs" />
+    <Compile Include="JCommon\FileDatabase\Containers\FileRow.cs" />
+    <Compile Include="JCommon\FileDatabase\FileDatabase.cs" />
+    <Compile Include="JCommon\FileDatabase\IO\DataBuffer.cs" />
+    <Compile Include="JCommon\FileDatabase\IO\DataFile.cs" />
+    <Compile Include="JCommon\FileDatabase\IO\DataReader.cs" />
+    <Compile Include="JCommon\FileDatabase\IO\DataWriter.cs" />
+    <Compile Include="JCommon\FileDatabase\NestedFileDatabase.cs" />
+    <Compile Include="JCommon\IniFile.cs" />
+    <Compile Include="JCommon\Invoker.cs" />
+    <Compile Include="JCommon\Log.cs" />
+    <Compile Include="JCommon\SD\Core\Abstract\AbstractDownload.cs" />
+    <Compile Include="JCommon\SD\Core\Abstract\SDAbstractObserver.cs" />
+    <Compile Include="JCommon\SD\Core\Builders\SDMultipart.cs" />
+    <Compile Include="JCommon\SD\Core\Builders\SDResumine.cs" />
+    <Compile Include="JCommon\SD\Core\Builders\SimpleDownloadBuilder.cs" />
+    <Compile Include="JCommon\SD\Core\Data\SDCancelledEventArgs.cs" />
+    <Compile Include="JCommon\SD\Core\Data\SDCheckData.cs" />
+    <Compile Include="JCommon\SD\Core\Data\SDDataReceivedEventArgs.cs" />
+    <Compile Include="JCommon\SD\Core\Data\SDDC.cs" />
+    <Compile Include="JCommon\SD\Core\Data\SDStartedEventArgs.cs" />
+    <Compile Include="JCommon\SD\Core\Download\MultiPartDownload.cs" />
+    <Compile Include="JCommon\SD\Core\Download\ResumingDownload.cs" />
+    <Compile Include="JCommon\SD\Core\Download\SimpleDownload.cs" />
+    <Compile Include="JCommon\SD\Core\Enums\SDState.cs" />
+    <Compile Include="JCommon\SD\Core\Enums\SDStopType.cs" />
+    <Compile Include="JCommon\SD\Core\Events\SDDelegates.cs" />
+    <Compile Include="JCommon\SD\Core\Events\SDEventArgs.cs" />
+    <Compile Include="JCommon\SD\Core\Exceptions\DownloadCheckNotSuccessfulException.cs" />
+    <Compile Include="JCommon\SD\Core\Exceptions\ResumingNotSupportedException.cs" />
+    <Compile Include="JCommon\SD\Core\Exceptions\TooManyRetriesException.cs" />
+    <Compile Include="JCommon\SD\Core\Interfaces\ISD.cs" />
+    <Compile Include="JCommon\SD\Core\Interfaces\ISDBuilder.cs" />
+    <Compile Include="JCommon\SD\Core\Interfaces\ISDChecker.cs" />
+    <Compile Include="JCommon\SD\Core\Interfaces\ISDObserver.cs" />
+    <Compile Include="JCommon\SD\Core\Interfaces\ISDRequestBuilder.cs" />
+    <Compile Include="JCommon\SD\Core\Observer\DownloadDataSample.cs" />
+    <Compile Include="JCommon\SD\Core\Observer\DownloadProgressMonitor.cs" />
+    <Compile Include="JCommon\SD\Core\Observer\DownloadSpeedMonitor.cs" />
+    <Compile Include="JCommon\SD\Core\Observer\DownloadThrottling.cs" />
+    <Compile Include="JCommon\SD\Core\Observer\DownloadToFileSaver.cs" />
+    <Compile Include="JCommon\SD\Core\Utils\DownloadChecker.cs" />
+    <Compile Include="JCommon\SD\Core\Utils\DownloadRangeHelper.cs" />
+    <Compile Include="JCommon\SD\Core\Utils\SimpleWebRequestBuilder.cs" />
+    <Compile Include="JCommon\SD\SuperDownloader.cs" />
+    <Compile Include="JCommon\StringUtils.cs" />
+    <Compile Include="JCommon\Time.cs" />
+    <Compile Include="JCommon\UniqueQueue.cs" />
+    <Compile Include="JCommon\XmlMarshaller.cs" />
     <Compile Include="Managers\DatabaseManager.cs" />
     <Compile Include="Managers\PreferenceManager.cs" />
     <Compile Include="HelperForms\RenamePalete.cs">
@@ -83,11 +159,13 @@
     <Compile Include="HelperForms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\KeyCodeConverter.cs" />
     <EmbeddedResource Include="HelperForms\RenamePalete.resx">
       <DependentUpon>RenamePalete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelperForms\AddPalette.resx">
       <DependentUpon>AddPalette.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -105,18 +183,6 @@
     <EmbeddedResource Include="HelperForms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tools.png" />
@@ -131,26 +197,19 @@
     <None Include="Resources\pencil-edit-button.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Tools1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Resize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\View.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tools2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Icon.ico" />
     <None Include="Resources\JHUI_LOGOX.png" />
-    <None Include="Resources\Thinking.gif" />
-    <None Include="Resources\ColorPickerLogo2.gif" />
-    <None Include="Resources\ColorPickerLogo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jColorPickerLogo.ico" />
+    <Content Include="Resources\jColorPickerLogo.png" />
+    <Content Include="Resources\pencil-edit-button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,6 +4,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using jColorPicker;
+using jColorPicker.Utils;
 
 static class Program
 {
@@ -21,9 +22,10 @@ static class Program
 
         try
         {
-            MainForm mainForm = new MainForm();
+            KeyCodeConverter.Start();
             PreferenceManager.Start();
             DatabaseManager.Start();
+            MainForm mainForm = new MainForm();
             Application.Run(mainForm);
         }
         catch (Exception e)
@@ -66,7 +68,7 @@ static public class ProgramInfo
             object[] attributes = Assembly.GetEntryAssembly().GetCustomAttributes(typeof(System.Runtime.InteropServices.GuidAttribute), false);
             if (attributes.Length == 0)
             {
-                return "bc59ee70-7768-4e47-b793-6c841eb7175d";
+                return "bc59ee70-7768-4e47-b793-6c841eb71751";
             }
             return ((System.Runtime.InteropServices.GuidAttribute)attributes[0]).Value;
         }

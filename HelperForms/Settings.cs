@@ -1,4 +1,5 @@
-﻿using JHUI;
+﻿using jColorPicker.Utils;
+using JHUI;
 using JHUI.Forms;
 using JHUI.Utils;
 using JHUI.Utils.HotKey;
@@ -16,8 +17,6 @@ namespace jColorPicker
 {
     public partial class Settings : JForm
     {
-        private Keys defaultkeyX;
-        private JKeyModifiers defaultModX;
         private bool locked;
         private JColorStyle color;
         private JThemeStyle theme;
@@ -27,56 +26,15 @@ namespace jColorPicker
             InitializeComponent();
         }
 
-        private void Settings_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(jToggle1.Checked)
-            {
-                try
-                {
-                    foreach(JKeyModifiers ke in Enum.GetValues(typeof(JKeyModifiers)))
-                    {
-                        string a = ke.ToString();
-                        string b = e.Modifiers.ToString();
-                        if (a == b)
-                        {
-                            defaultModX = ke;
-                            jGroupBox1.Text = "Record Color HotKey: " + defaultModX.ToString() + "+" + defaultkeyX.ToString();
-
-                            return;
-                        }
-                    }
-                    defaultkeyX = e.KeyCode;
-                    jGroupBox1.Text = "Record Color HotKey: " + defaultModX.ToString() + "+" + defaultkeyX.ToString();
-
-                }
-                catch { 
-
-                    
-                }
-            }
-        }
-
         private void Settings_Load(object sender, EventArgs e)
         {
-            Keys defaultkey = Keys.C;
-            JKeyModifiers defaultMod = JKeyModifiers.Alt;
-            if (PreferenceManager.Database.HotKey != 0)
-            {
-                defaultkey = (Keys)PreferenceManager.Database.HotKey;
-            }
-            if (PreferenceManager.Database.HotKeyModifier != 0)
-            {
-                defaultMod = (JKeyModifiers)PreferenceManager.Database.HotKeyModifier;
-            }
-            jGroupBox1.Text = "Record Color HotKey: "+ defaultMod.ToString() +"+"+ defaultkey.ToString();
-            defaultkeyX = defaultkey;
-            defaultModX = defaultMod;
             locked = true;
+
             string[] colors = Enum.GetNames(typeof(JColorStyle));
             sThemeColor.Items.Clear();
             foreach (string str in colors)
             {
-                if(!str.Equals("Default") && !str.Equals("Custom"))
+                if (!str.Equals("Default") && !str.Equals("Custom"))
                     sThemeColor.Items.Add(str.Replace("_", " "));
             }
             color = PreferenceManager.Database.ThemeColor;
@@ -85,24 +43,52 @@ namespace jColorPicker
             jTheme.SelectedItem = theme.ToString();
             jColorSize.SelectedIndex = PreferenceManager.Database.ColorSize;
 
+            string[] keys = Enum.GetNames(typeof(Keys));
+            KeyCaptureCombo.Items.Clear();
+            KeyCopyToClipboard.Items.Clear();
+
+            foreach (string str in keys)
+            {
+                KeyCaptureCombo.Items.Add(str);
+                KeyCopyToClipboard.Items.Add(str);
+            }
+
+            string[] keysmid = Enum.GetNames(typeof(JKeyModifiers));
+            KeyModCaptureCombo.Items.Clear();
+            KeyModCopyToClipboard.Items.Clear();
+            foreach (string str in keysmid)
+            {
+                KeyModCaptureCombo.Items.Add(str);
+                KeyModCopyToClipboard.Items.Add(str);
+            }
+            KeyModCaptureCombo.SelectedIndex = KeyCodeConverter.GetAltIndex(PreferenceManager.Database.ScreenCopyColorKeyModifier);
+            KeyModCopyToClipboard.SelectedIndex = KeyCodeConverter.GetAltIndex(PreferenceManager.Database.CopyToClipboardKeyModifier);
+
+
+            KeyCaptureCombo.SelectedIndex = KeyCodeConverter.GetIndex(PreferenceManager.Database.ScreenCopyColorKey);
+            KeyCopyToClipboard.SelectedIndex = KeyCodeConverter.GetIndex(PreferenceManager.Database.CopyToClipboardKey);
+            ClipboardFormatingTypeCombo.SelectedIndex = PreferenceManager.Database.ClipboardFormatingType;
+            FormatingTextBox.Text = PreferenceManager.Database.FormatTemplate;
+
+            FormatingTextBox.Visible = ClipboardFormatingTypeCombo.SelectedIndex == 5;
+            ToggleAutoCopyToClipboard.Checked = PreferenceManager.Database.AutoCopyToClipboard;
+            StayOnTop.Checked = PreferenceManager.Database.StayOnTop;
             locked = false;
         }
 
         private void Settings_FormClosing(object sender, FormClosingEventArgs e)
         {
-            PreferenceManager.Database.HotKey = (int)defaultkeyX;
-            PreferenceManager.Database.HotKeyModifier = (int)defaultModX;
+            PreferenceManager.Database.FormatTemplate = FormatingTextBox.Text;
             PreferenceManager.Save();
             this.DialogResult = DialogResult.OK;
         }
 
         private void styleListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(!locked && sThemeColor.SelectedIndex != -1)
+            if (!locked && sThemeColor.SelectedIndex != -1)
             {
                 color = (JColorStyle)Enum.Parse(typeof(JColorStyle), sThemeColor.Items[sThemeColor.SelectedIndex].ToString());
                 PreferenceManager.Database.ThemeColor = color;
-                PreferenceManager.Save();
                 SetStyle(color, theme, 255);
             }
         }
@@ -113,7 +99,6 @@ namespace jColorPicker
             {
                 theme = (JThemeStyle)Enum.Parse(typeof(JThemeStyle), jTheme.Items[jTheme.SelectedIndex].ToString());
                 PreferenceManager.Database.Theme = theme;
-                PreferenceManager.Save();
                 SetStyle(color, theme, 255);
             }
         }
@@ -122,7 +107,8 @@ namespace jColorPicker
         {
             if (this.InvokeRequired)
             {
-                this.Invoke(new MethodInvoker(delegate {
+                this.Invoke(new MethodInvoker(delegate
+                {
                     SetStyle(style, thme, alpha);
                 }));
                 return;
@@ -135,9 +121,56 @@ namespace jColorPicker
             if (!locked && jColorSize.SelectedIndex != -1)
             {
                 PreferenceManager.Database.ColorSize = jColorSize.SelectedIndex;
-                PreferenceManager.Save();
                 SetStyle(color, theme, 255);
             }
+        }
+
+        private void ToggleAutoCopyToClipboard_CheckedChanged(object sender, EventArgs e)
+        {
+            if (locked) return;
+            PreferenceManager.Database.AutoCopyToClipboard = ToggleAutoCopyToClipboard.Checked;
+        }
+
+        private void KeyCaptureCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (locked) return;
+            PreferenceManager.Database.ScreenCopyColorKey = KeyCodeConverter.GetKey(KeyCaptureCombo.SelectedIndex);
+        }
+
+        private void CopyToClipboardCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (locked) return;
+
+            PreferenceManager.Database.CopyToClipboardKey = KeyCodeConverter.GetKey(KeyCopyToClipboard.SelectedIndex);
+        }
+
+        private void KeyModCaptureCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (locked) return;
+            PreferenceManager.Database.ScreenCopyColorKeyModifier = KeyCodeConverter.GetAltKey(KeyModCaptureCombo.SelectedIndex);
+        }
+
+        private void KeyModCopyToClipboard_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (locked) return;
+            PreferenceManager.Database.CopyToClipboardKeyModifier = KeyCodeConverter.GetAltKey(KeyModCopyToClipboard.SelectedIndex);
+        }
+
+        private void jComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (locked) return;
+            PreferenceManager.Database.ClipboardFormatingType = ClipboardFormatingTypeCombo.SelectedIndex;
+            FormatingTextBox.Visible = ClipboardFormatingTypeCombo.SelectedIndex == 5;
+            if(ClipboardFormatingTypeCombo.SelectedIndex == 5)
+            {
+                JMessageBox.Show(this, "Example \"rbg(@R,@G,@B);\".\n\nReplace Map:\n@R= red, @G= green, @B = blue, @A = alpha, @H= hue, @S = saturation, @L = lightness, @DA=alpha (0.x)", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 211);
+            }
+        }
+
+        private void StayOnTop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (locked) return;
+            PreferenceManager.Database.StayOnTop = StayOnTop.Checked;
         }
     }
 }

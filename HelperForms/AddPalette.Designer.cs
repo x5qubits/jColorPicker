@@ -41,6 +41,7 @@
             this.jPictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.jPictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("jPictureBox5.BackgroundImage")));
             this.jPictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.jPictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jPictureBox5.Location = new System.Drawing.Point(244, -1);
             this.jPictureBox5.Name = "jPictureBox5";
             this.jPictureBox5.Size = new System.Drawing.Size(25, 25);
@@ -69,6 +70,7 @@
             this.jTextBox1.CustomButton.Visible = false;
             this.jTextBox1.DrawBorder = true;
             this.jTextBox1.DrawBorderBottomLine = false;
+            this.jTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.jTextBox1.Lines = new string[0];
             this.jTextBox1.Location = new System.Drawing.Point(8, 28);
             this.jTextBox1.MaxLength = 32767;
@@ -84,6 +86,7 @@
             this.jTextBox1.TabIndex = 25;
             this.jTextBox1.TextWaterMark = "Enter New Palette Name";
             this.jTextBox1.Theme = JHUI.JThemeStyle.Dark;
+            this.jTextBox1.UseCustomFont = true;
             this.jTextBox1.UseSelectable = true;
             this.jTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.jTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
