@@ -1,6 +1,5 @@
 # J Color Picker
 <link rel="shortcut icon" type="image/x-icon" href="Resources/jColorPickerLogo.ico">
-<title>HTML Color Picker - Color Picker online - Color Picker with palette - Hex color picker</title>
 
 ![Build Status Travis-CI](https://img.shields.io/appveyor/ci/x5Qubits/jColorPicker?style=flat-square)
 
