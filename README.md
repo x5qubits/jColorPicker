@@ -8,7 +8,7 @@ J Color Picker a multi-purpose color picker for web designers and programmers. I
 ## Features
 - Extensive range of color code formats:HEX, RGB, RGBA, HSB/HSV, HSL, and User Defined (Custom).
 - List of palettes
-- CSS-compatible colur codes.
+- CSS-compatible color codes.
 - User-defined hotkeys.
 - High-DPI awareness.
 - Multi-display support.
