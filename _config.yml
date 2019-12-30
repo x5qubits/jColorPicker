@@ -5,3 +5,5 @@ show_downloads: true
 github:
   zip_url: https://github.com/x5qubits/jColorPicker/files/4009889/Release.zip
   tar_url: https://github.com/x5qubits/jColorPicker/files/4009889/Release.zip
+  zip_name: Release
+  tar_name: Test
