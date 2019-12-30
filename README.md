@@ -14,3 +14,9 @@ A simple yet functional color picker, that is a must for all web-developers.
 - Optional stay-on-top behaviour.
 	
 ![alt text](https://i.postimg.cc/X7M3vVYF/j-pick1.png)
+
+![alt text](https://i.postimg.cc/J0LT9dRy/j-pick2.png)
+
+![alt text](https://i.postimg.cc/0j0txdNV/j-pick3.png)
+
+![alt text](https://i.postimg.cc/J7NYbmQj/j-pick4.png)
