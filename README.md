@@ -1,8 +1,12 @@
-# J Color Picker ![Build Status Travis-CI](https://img.shields.io/appveyor/ci/x5Qubits/jColorPicker?style=flat-square)
+# J Color Picker
+
+![Build Status Travis-CI](https://img.shields.io/appveyor/ci/x5Qubits/jColorPicker?style=flat-square)
 
 jColorPicker is app for Windows. It allows you to pick color from any webpage or from advanced color picker. It is great tool for web developers, game developers, webmasters and  digital artists
 
-## License [![License](https://img.shields.io/github/license/widelands/widelands.svg?color=blue)](LICENCE)
+## Download
+For the latest binary files please visit https://www.widelands.org/wiki/Download/
+
 
 ## Features
 - Frendly UI
@@ -23,6 +27,19 @@ jColorPicker is app for Windows. It allows you to pick color from any webpage or
 ### In App Guide
 ![alt text](https://i.postimg.cc/0j0txdNV/j-pick3.png)
 ![alt text](https://i.postimg.cc/J0LT9dRy/j-pick2.png)
-
-
 ![alt text](https://i.postimg.cc/J7NYbmQj/j-pick4.png)
+
+
+
+## Resources
+
+* [Site](https://payum.forma-pro.com/)
+* [Documentation](https://github.com/Payum/Payum/blob/master/docs/index.md)
+* [Questions](http://stackoverflow.com/questions/tagged/payum)
+* [Issue Tracker](https://github.com/Payum/Payum/issues)
+* [Twitter](https://twitter.com/payumphp)
+
+
+## License
+
+Payum is released under the [MIT License](LICENSE).
