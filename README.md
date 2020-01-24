@@ -3,7 +3,31 @@
 
 ![Build Status Travis-CI](https://img.shields.io/appveyor/ci/x5Qubits/jColorPicker?style=flat-square)
 
-J Color Picker a multi-purpose color picker for web designers and programmers. It identifies and represents colors in various color code formats. Simply drag the eyedropper control to any location on the screen and release or place place your cursor on the color you want and then press ALT+S. The color code for the selected color will be automatically copied to the clipboard. See other features.
+
+**Regardless if you're a web developer or a programmer in the general sense, this nifty little app will help you get all the color code details you need**
+
+Color palettes can sometimes be more than just their visual representation, especially in the world of programming. Take for instance Web design – an impressive range of corresponding codes are used to represent each color variation and working with the different classifications can sometimes be hectic. J Color Picker aims at providing a tool for easily identifying colors, save them as custom palettes and viewing their corresponding programming codes.
+
+
+**Minimalist and elegant interface that carries an accessible layout**
+
+The program features a stylish interface, which encapsulates all the required elements for working with color palettes. Although we appreciate the resizable layout, it would have been beneficial to also have options for selecting different views of the colors in the palette.
+
+For those who are familiar with a classic “Photoshop approach” that involves a color dropper/picker tool, the program offers a handy alternative. All you need to do is simply hold and drag the crosshair to the preferred sampling area.
+
+**Pick your color, save it as custom preset, and browse the extensive range of color codes**
+
+Having selected a color by either using the color picker or the pre-defined colors, users can save it for later use. Furthermore, even the existing colors can also be edited and stored. Having the ability to use both numerical fields and sliders as input methods for the RGB and HSL values is a really nice touch.
+
+A wide range of codes is available, from the classic RGB, up to Hexadecimal, HSL or HSLA. A very handy option offers auto-copy to the clipboard, making things easier when working with multiple apps.
+
+**Useful utilitary that can help users save a lot of time when working with color palettes and seeking color codes**
+
+J Color Picker is a valuable tool for those who work with color palettes and need an efficient way of identifying and viewing color codes. Simple enough yet capable, it offers a sampling tool as well as a decent range of pre-defined colors.
+
+**Tags**
+
+#Color Picker #Color Palette #CSS #Color Code #Palette Dropper #Color HEX 
 
 ## Features
 - Extensive range of color code formats:HEX, RGB, RGBA, HSB/HSV, HSL, and User Defined (Custom).
