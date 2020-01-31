@@ -11,7 +11,7 @@ Color palettes can sometimes be more than just their visual representation, espe
 
 **Minimalist and elegant interface that carries an accessible layout**
 
-The program features a stylish interface, which encapsulates all the required elements for working with color palettes. Although we appreciate the resizable layout, it would have been beneficial to also have options for selecting different views of the colors in the palette.
+The program features a stylish interface, which encapsulates all the required elements for working with color palettes. 
 
 For those who are familiar with a classic “Photoshop approach” that involves a color dropper/picker tool, the program offers a handy alternative. All you need to do is simply hold and drag the crosshair to the preferred sampling area.
 
